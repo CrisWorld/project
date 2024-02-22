@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>Collection name</h1>
+    <input type="text" id="collection_name">
+    <h1>Dữ liệu</h1>
+    <textarea id="data"></textarea> <br>
+    <button id="button">Chuyển</button>
+    <h1>Kết quả</h1>
+    <textarea id="result"></textarea>
+    <script src="script.js"></script>
+    <script>
+      var collection_name = document.getElementById("collection_name");
+      var data = document.getElementById("data");
+      var result = document.getElementById('result');
+      var button = document.getElementById('button');
+      button.onclick = function() {
+        if(collection_name.value != "" && data.value != ""){
+          let command = getImportScript(collection_name.value, data.value);
+          result.value = command;
+        }
+      }
+    </script>
+</body>
+</html>
